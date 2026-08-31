@@ -1,0 +1,44 @@
+name: Pactum Tests & Publish Report
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Subir o servidor GraphQL em segundo plano
+        run: node server.js &
+
+      - name: Esperar o servidor ficar disponível
+        run: npx --yes wait-on http://localhost:8080/graphql -t 30000
+
+      - name: Rodar os testes (Mocha + Pactum)
+        run: npm test
+        continue-on-error: true
+
+      - name: Publicar relatório na GitHub Page
+        if: always()
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mochawesome-report
