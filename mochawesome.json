@@ -1,0 +1,325 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 8,
+    "passes": 0,
+    "pending": 0,
+    "failures": 8,
+    "start": "2026-08-27T14:17:54.806Z",
+    "end": "2026-08-27T14:17:54.886Z",
+    "duration": 80,
+    "testsRegistered": 8,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "91fdb12a-8a63-4e81-bf85-8f89ccfde859",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "415b5096-b29c-47cc-8c47-0e4d919e3cba",
+          "title": "Categorias - Teste de Contrato",
+          "fullFile": "/workspaces/pactum-exercicio/test/contract/category.contract.spec.js",
+          "file": "/test/contract/category.contract.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar contrato da resposta ao adicionar categoria",
+              "fullTitle": "Categorias - Teste de Contrato Validar contrato da resposta ao adicionar categoria",
+              "timedOut": false,
+              "duration": 44,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addCategory(name: \"Validação Contrato Categoria\") {\n        id\n        name\n      }\n    }\n  `)\n  .expectStatus(200)\n  .expectJsonSchema({\n    type: 'object',\n    properties: {\n      data: {\n        type: 'object',\n        properties: {\n          addCategory: {\n            type: 'object',\n            properties: {\n              id: { type: 'string' },\n              name: { type: 'string' }\n            },\n            required: ['id', 'name']\n          }\n        }\n      }\n    }\n  });",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "a7af4a44-8e39-4304-9c13-3ba4501ccd40",
+              "parentUUID": "415b5096-b29c-47cc-8c47-0e4d919e3cba",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a7af4a44-8e39-4304-9c13-3ba4501ccd40"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 44,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7251df77-fe43-4e4e-a097-5e6460aa937c",
+          "title": "Produtos - Teste de Contrato",
+          "fullFile": "/workspaces/pactum-exercicio/test/contract/product.contract.spec.js",
+          "file": "/test/contract/product.contract.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Validar contrato da resposta ao adicionar produto",
+              "fullTitle": "Produtos - Teste de Contrato Validar contrato da resposta ao adicionar produto",
+              "timedOut": false,
+              "duration": 2,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addProduct(name: \"Monitor Gamer\", price: 1200.0) {\n        id\n        name\n        price\n      }\n    }\n  `)\n  .expectStatus(200)\n  .expectJsonSchema({\n    type: 'object',\n    properties: {\n      data: {\n        type: 'object',\n        properties: {\n          addProduct: {\n            type: 'object',\n            properties: {\n              id: { type: 'string' },\n              name: { type: 'string' },\n              price: { type: 'number' }\n            },\n            required: ['id', 'name', 'price']\n          }\n        }\n      }\n    }\n  });",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "844a991f-fd31-46ed-8ef5-a41307f497bf",
+              "parentUUID": "7251df77-fe43-4e4e-a097-5e6460aa937c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "844a991f-fd31-46ed-8ef5-a41307f497bf"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 2,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "74e3863d-7b19-4f77-8f45-cf04dfe7b4d1",
+          "title": "Categorias - Testes Funcionais",
+          "fullFile": "/workspaces/pactum-exercicio/test/graphql/category.spec.js",
+          "file": "/test/graphql/category.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "addCategory - Deve adicionar uma nova categoria",
+              "fullTitle": "Categorias - Testes Funcionais addCategory - Deve adicionar uma nova categoria",
+              "timedOut": false,
+              "duration": 7,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addCategory(name: \"Eletrônicos\") {\n        id\n        name\n      }\n    }\n  `)\n  .expectStatus(200);\ncategoryId = response.body.data.addCategory.id;",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "a70a0b4d-95af-4daa-afb1-c18f6ab1076f",
+              "parentUUID": "74e3863d-7b19-4f77-8f45-cf04dfe7b4d1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "editCategory - Deve alterar a categoria criada",
+              "fullTitle": "Categorias - Testes Funcionais editCategory - Deve alterar a categoria criada",
+              "timedOut": false,
+              "duration": 3,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      editCategory(id: \"${categoryId}\", name: \"Tecnologia & Eletrônicos\") {\n        id\n        name\n      }\n    }\n  `)\n  .expectStatus(200);",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "17e62033-d790-450c-9465-6fd2c79f7e6f",
+              "parentUUID": "74e3863d-7b19-4f77-8f45-cf04dfe7b4d1",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deleteCategory - Deve remover a categoria",
+              "fullTitle": "Categorias - Testes Funcionais deleteCategory - Deve remover a categoria",
+              "timedOut": false,
+              "duration": 2,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      deleteCategory(id: \"${categoryId}\")\n    }\n  `)\n  .expectStatus(200);",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "66ed7861-6cfe-4ecc-8398-7e4029984e06",
+              "parentUUID": "74e3863d-7b19-4f77-8f45-cf04dfe7b4d1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "a70a0b4d-95af-4daa-afb1-c18f6ab1076f",
+            "17e62033-d790-450c-9465-6fd2c79f7e6f",
+            "66ed7861-6cfe-4ecc-8398-7e4029984e06"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 12,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a55b525e-1c5f-4b0c-84c6-c7d0d042f68b",
+          "title": "Produtos - Testes Funcionais",
+          "fullFile": "/workspaces/pactum-exercicio/test/graphql/product.spec.js",
+          "file": "/test/graphql/product.spec.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "addProduct - Deve cadastrar um novo produto",
+              "fullTitle": "Produtos - Testes Funcionais addProduct - Deve cadastrar um novo produto",
+              "timedOut": false,
+              "duration": 2,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "const response = await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addProduct(name: \"Teclado Mecânico\", price: 250.0) {\n        id\n        name\n        price\n      }\n    }\n  `)\n  .expectStatus(200);\nproductId = response.body.data.addProduct.id;",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "211e2393-0a24-4daa-ad7f-9b3081c1b89c",
+              "parentUUID": "a55b525e-1c5f-4b0c-84c6-c7d0d042f68b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "editProduct - Deve atualizar os dados do produto",
+              "fullTitle": "Produtos - Testes Funcionais editProduct - Deve atualizar os dados do produto",
+              "timedOut": false,
+              "duration": 4,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      editProduct(id: \"${productId}\", name: \"Teclado RGB\", price: 299.9) {\n        id\n        name\n        price\n      }\n    }\n  `)\n  .expectStatus(200);",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "3f207aed-5f2a-4e27-9c53-26d027cd4d1a",
+              "parentUUID": "a55b525e-1c5f-4b0c-84c6-c7d0d042f68b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "deleteProduct - Deve deletar o produto cadastrado",
+              "fullTitle": "Produtos - Testes Funcionais deleteProduct - Deve deletar o produto cadastrado",
+              "timedOut": false,
+              "duration": 3,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      deleteProduct(id: \"${productId}\")\n    }\n  `)\n  .expectStatus(200);",
+              "err": {
+                "message": "AssertionError: HTTP status 405 !== 200\n\n405 !== 200\n",
+                "estack": "AssertionError [ERR_ASSERTION]: HTTP status 405 !== 200\n\n405 !== 200\n\n    at Expect._validateStatus (node_modules/pactum/src/models/expect.js:106:14)\n    at Expect.validate (node_modules/pactum/src/models/expect.js:47:10)\n    at Tosser.validateResponse (node_modules/pactum/src/models/Tosser.js:255:23)\n    at Tosser.validate (node_modules/pactum/src/models/Tosser.js:219:18)\n    at Tosser.toss (node_modules/pactum/src/models/Tosser.js:46:18)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)",
+                "diff": "- 405\n+ 200\n"
+              },
+              "uuid": "12cafcab-af55-40ae-a1d3-906d56bcbd10",
+              "parentUUID": "a55b525e-1c5f-4b0c-84c6-c7d0d042f68b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "211e2393-0a24-4daa-ad7f-9b3081c1b89c",
+            "3f207aed-5f2a-4e27-9c53-26d027cd4d1a",
+            "12cafcab-af55-40ae-a1d3-906d56bcbd10"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.8.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "8.0.1"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.3.2"
+    }
+  }
+}
