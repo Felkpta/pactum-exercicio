@@ -36,5 +36,5 @@ const app = express();
 app.use('/graphql', graphqlHTTP({ schema, rootValue: root, graphiql: true }));
 
 app.listen(8080, () => {
-  console.log('🚀 API GraphQL rodando em http://localhost:4000/graphql');
+  console.log('🚀 API GraphQL rodando em http://localhost:8080/graphql');
 });
