@@ -5,9 +5,9 @@
     "passes": 8,
     "pending": 0,
     "failures": 0,
-    "start": "2026-09-01T12:31:10.096Z",
-    "end": "2026-09-01T12:31:10.163Z",
-    "duration": 67,
+    "start": "2026-09-01T12:31:43.831Z",
+    "end": "2026-09-01T12:31:43.904Z",
+    "duration": 73,
     "testsRegistered": 8,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "edd96e56-fb5f-42ff-ac25-8e60eedba2a5",
+      "uuid": "e77eb989-2478-4aee-a77b-1fc058017338",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "3a57e8e1-6f1c-4a89-88ca-2acaf343e3b6",
+          "uuid": "201cc29f-6bfe-46ac-bf32-205030c1a2a3",
           "title": "Categorias - Teste de Contrato",
           "fullFile": "/home/runner/work/pactum-exercicio/pactum-exercicio/test/contract/category.contract.spec.js",
           "file": "/test/contract/category.contract.spec.js",
@@ -38,7 +38,7 @@
               "title": "Validar contrato da resposta ao adicionar categoria",
               "fullTitle": "Categorias - Teste de Contrato Validar contrato da resposta ao adicionar categoria",
               "timedOut": false,
-              "duration": 43,
+              "duration": 46,
               "state": "passed",
               "speed": "medium",
               "pass": true,
@@ -47,26 +47,26 @@
               "context": null,
               "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addCategory(name: \"Validação Contrato Categoria\") {\n        id\n        name\n      }\n    }\n  `)\n  .expectStatus(200)\n  .expectJsonSchema({\n    type: 'object',\n    properties: {\n      data: {\n        type: 'object',\n        properties: {\n          addCategory: {\n            type: 'object',\n            properties: {\n              id: { type: 'string' },\n              name: { type: 'string' }\n            },\n            required: ['id', 'name']\n          }\n        }\n      }\n    }\n  });",
               "err": {},
-              "uuid": "e313936f-ef6b-4888-a5d3-35e4b6965565",
-              "parentUUID": "3a57e8e1-6f1c-4a89-88ca-2acaf343e3b6",
+              "uuid": "e1b47c8b-b1b9-4b8a-9fb7-b8f75e688e46",
+              "parentUUID": "201cc29f-6bfe-46ac-bf32-205030c1a2a3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "e313936f-ef6b-4888-a5d3-35e4b6965565"
+            "e1b47c8b-b1b9-4b8a-9fb7-b8f75e688e46"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 43,
+          "duration": 46,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "9e930991-410c-4af2-8df2-5ed22ca98bc3",
+          "uuid": "adfda28f-a0b8-4d38-8e2a-5e4ea6533957",
           "title": "Produtos - Teste de Contrato",
           "fullFile": "/home/runner/work/pactum-exercicio/pactum-exercicio/test/contract/product.contract.spec.js",
           "file": "/test/contract/product.contract.spec.js",
@@ -77,7 +77,7 @@
               "title": "Validar contrato da resposta ao adicionar produto",
               "fullTitle": "Produtos - Teste de Contrato Validar contrato da resposta ao adicionar produto",
               "timedOut": false,
-              "duration": 5,
+              "duration": 6,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -86,26 +86,26 @@
               "context": null,
               "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addProduct(name: \"Monitor Gamer\", price: 1200.0) {\n        id\n        name\n        price\n      }\n    }\n  `)\n  .expectStatus(200)\n  .expectJsonSchema({\n    type: 'object',\n    properties: {\n      data: {\n        type: 'object',\n        properties: {\n          addProduct: {\n            type: 'object',\n            properties: {\n              id: { type: 'string' },\n              name: { type: 'string' },\n              price: { type: 'number' }\n            },\n            required: ['id', 'name', 'price']\n          }\n        }\n      }\n    }\n  });",
               "err": {},
-              "uuid": "1a4703fb-cdc1-4c7b-b423-51c420eb08ff",
-              "parentUUID": "9e930991-410c-4af2-8df2-5ed22ca98bc3",
+              "uuid": "43ad3fea-10be-4993-9aed-cc5f589b74ee",
+              "parentUUID": "adfda28f-a0b8-4d38-8e2a-5e4ea6533957",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "1a4703fb-cdc1-4c7b-b423-51c420eb08ff"
+            "43ad3fea-10be-4993-9aed-cc5f589b74ee"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 5,
+          "duration": 6,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "e727e8a3-60c9-4798-ae8d-489e97957a0b",
+          "uuid": "1d89df73-210c-456b-b437-ed772c922398",
           "title": "Categorias - Testes Funcionais",
           "fullFile": "/home/runner/work/pactum-exercicio/pactum-exercicio/test/graphql/category.spec.js",
           "file": "/test/graphql/category.spec.js",
@@ -116,7 +116,7 @@
               "title": "addCategory - Deve adicionar uma nova categoria",
               "fullTitle": "Categorias - Testes Funcionais addCategory - Deve adicionar uma nova categoria",
               "timedOut": false,
-              "duration": 2,
+              "duration": 3,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -125,8 +125,8 @@
               "context": null,
               "code": "const response = await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addCategory(name: \"Eletrônicos\") {\n        id\n        name\n      }\n    }\n  `)\n  .expectStatus(200);\ncategoryId = response.body.data.addCategory.id;",
               "err": {},
-              "uuid": "12184002-5c39-4f0b-b491-e658bf56afc5",
-              "parentUUID": "e727e8a3-60c9-4798-ae8d-489e97957a0b",
+              "uuid": "f25b536b-aab7-4394-919b-5058fd0634f0",
+              "parentUUID": "1d89df73-210c-456b-b437-ed772c922398",
               "isHook": false,
               "skipped": false
             },
@@ -143,8 +143,8 @@
               "context": null,
               "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      editCategory(id: \"${categoryId}\", name: \"Tecnologia & Eletrônicos\") {\n        id\n        name\n      }\n    }\n  `)\n  .expectStatus(200);",
               "err": {},
-              "uuid": "71c999c8-4c2e-4437-bfc8-947f573f6a67",
-              "parentUUID": "e727e8a3-60c9-4798-ae8d-489e97957a0b",
+              "uuid": "be5208de-b46d-4b17-858b-3f064ad173af",
+              "parentUUID": "1d89df73-210c-456b-b437-ed772c922398",
               "isHook": false,
               "skipped": false
             },
@@ -161,28 +161,28 @@
               "context": null,
               "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      deleteCategory(id: \"${categoryId}\")\n    }\n  `)\n  .expectStatus(200);",
               "err": {},
-              "uuid": "8bf77e26-b1be-4cee-98ca-4b8882600c36",
-              "parentUUID": "e727e8a3-60c9-4798-ae8d-489e97957a0b",
+              "uuid": "1332c355-5d3c-49aa-9207-2b61c96b9c7b",
+              "parentUUID": "1d89df73-210c-456b-b437-ed772c922398",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "12184002-5c39-4f0b-b491-e658bf56afc5",
-            "71c999c8-4c2e-4437-bfc8-947f573f6a67",
-            "8bf77e26-b1be-4cee-98ca-4b8882600c36"
+            "f25b536b-aab7-4394-919b-5058fd0634f0",
+            "be5208de-b46d-4b17-858b-3f064ad173af",
+            "1332c355-5d3c-49aa-9207-2b61c96b9c7b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 7,
+          "duration": 8,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
         },
         {
-          "uuid": "55ecc67e-a44d-4cea-a0a9-23ddec62c020",
+          "uuid": "4240d5e2-e715-4313-ab37-60dd8f4baa3a",
           "title": "Produtos - Testes Funcionais",
           "fullFile": "/home/runner/work/pactum-exercicio/pactum-exercicio/test/graphql/product.spec.js",
           "file": "/test/graphql/product.spec.js",
@@ -193,7 +193,7 @@
               "title": "addProduct - Deve cadastrar um novo produto",
               "fullTitle": "Produtos - Testes Funcionais addProduct - Deve cadastrar um novo produto",
               "timedOut": false,
-              "duration": 3,
+              "duration": 2,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -202,8 +202,8 @@
               "context": null,
               "code": "const response = await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      addProduct(name: \"Teclado Mecânico\", price: 250.0) {\n        id\n        name\n        price\n      }\n    }\n  `)\n  .expectStatus(200);\nproductId = response.body.data.addProduct.id;",
               "err": {},
-              "uuid": "d41ade9c-6cf9-49e1-abdb-91151b1247f2",
-              "parentUUID": "55ecc67e-a44d-4cea-a0a9-23ddec62c020",
+              "uuid": "96184ca4-b3e7-4e43-9dc0-f8ddaf014035",
+              "parentUUID": "4240d5e2-e715-4313-ab37-60dd8f4baa3a",
               "isHook": false,
               "skipped": false
             },
@@ -220,8 +220,8 @@
               "context": null,
               "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      editProduct(id: \"${productId}\", name: \"Teclado RGB\", price: 299.9) {\n        id\n        name\n        price\n      }\n    }\n  `)\n  .expectStatus(200);",
               "err": {},
-              "uuid": "3d693153-4d7f-4efa-8a1d-2ad444fe825b",
-              "parentUUID": "55ecc67e-a44d-4cea-a0a9-23ddec62c020",
+              "uuid": "7fd91e8a-7250-4ce9-8e3d-6dff342a25ab",
+              "parentUUID": "4240d5e2-e715-4313-ab37-60dd8f4baa3a",
               "isHook": false,
               "skipped": false
             },
@@ -238,22 +238,22 @@
               "context": null,
               "code": "await pactum.spec()\n  .post('http://localhost:8080/graphql')\n  .withGraphQLQuery(`\n    mutation {\n      deleteProduct(id: \"${productId}\")\n    }\n  `)\n  .expectStatus(200);",
               "err": {},
-              "uuid": "56b41466-7ac9-49e4-9e33-dddb3b3b4a9d",
-              "parentUUID": "55ecc67e-a44d-4cea-a0a9-23ddec62c020",
+              "uuid": "46fd095e-4a03-4197-b378-a03b0d7b650b",
+              "parentUUID": "4240d5e2-e715-4313-ab37-60dd8f4baa3a",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "d41ade9c-6cf9-49e1-abdb-91151b1247f2",
-            "3d693153-4d7f-4efa-8a1d-2ad444fe825b",
-            "56b41466-7ac9-49e4-9e33-dddb3b3b4a9d"
+            "96184ca4-b3e7-4e43-9dc0-f8ddaf014035",
+            "7fd91e8a-7250-4ce9-8e3d-6dff342a25ab",
+            "46fd095e-4a03-4197-b378-a03b0d7b650b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 8,
+          "duration": 7,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
