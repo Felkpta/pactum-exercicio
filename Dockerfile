@@ -1,26 +1,12 @@
-name: Build & Push Docker Image
+FROM node:20
 
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+WORKDIR /app
 
-jobs:
-  build-and-push:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout código
-        uses: actions/checkout@v4
+COPY package*.json ./
+RUN npm ci
 
-      - name: Login no Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+COPY . .
 
-      - name: Build e push da imagem
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/pactum-exercicio:latest
+EXPOSE 8080
+
+CMD ["sh", "-c", "node server.js & npx --yes wait-on tcp:localhost:8080 -t 30000 && npm test"]
